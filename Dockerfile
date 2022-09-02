@@ -9,6 +9,6 @@ EXPOSE 8082
 
 RUN mkdir /app
 
-COPY --from=build /home/gradle/src/build/libs/*.jar /app/mc3.jar
+COPY --from=build /home/gradle/src/build/libs/MC3-0.0.1-SNAPSHOT.jar /app/mc3.jar
 
-ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/mc3.jar"]
+ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/mc3.jar"]
